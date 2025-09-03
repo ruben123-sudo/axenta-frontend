@@ -1,0 +1,31 @@
+body {
+  overflow-x: hidden;
+}
+
+.justificado {
+  text-align: justify;
+  hyphens: auto;
+
+}
+
+.servicios-altura{
+    padding: 6rem 0;
+}
+
+.servicio-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: 15px;
+  cursor: pointer;
+  padding: 0 2rem;
+}
+
+.servicio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.servicio-card div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

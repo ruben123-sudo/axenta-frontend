@@ -1,0 +1,26 @@
+.quienes-somos {
+  padding: 6rem 0; /* Espaciado vertical */
+}
+
+.quienes-somos h2 {
+  font-size: 2.5rem;
+}
+
+.quienes-somos p {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #666;
+}
+.descripcion {
+ text-align: justify;
+ hyphens: auto;
+}

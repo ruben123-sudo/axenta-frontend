@@ -1,0 +1,17 @@
+.footer {
+  border-top: 1px solid #eaeaea;
+}
+
+.footer-logo {
+  height: 50px; /* Ajusta según convenga */
+  object-fit: contain;
+}
+
+.footer a {
+  color: inherit;        /* Enlaces heredan el color */
+  text-decoration: none; /* Sin subrayado */
+}
+
+.footer a:hover {
+  text-decoration: underline; /* Solo al pasar el ratón */
+}

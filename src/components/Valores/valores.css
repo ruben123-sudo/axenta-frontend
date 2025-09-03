@@ -1,0 +1,21 @@
+/* src/components/Valores/Valores.css */
+
+
+.valor-card {
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.valor-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.valor-icon {
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.valor-card:hover .valor-icon {
+  transform: scale(1.2);
+}
