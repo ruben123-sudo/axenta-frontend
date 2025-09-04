@@ -3,11 +3,10 @@ import { useParams } from "react-router-dom";
 import { FaUser, FaEnvelope, FaPhone, FaCheckCircle } from "react-icons/fa";
 import { Card } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { motion } from "framer-motion";
 import './formulario.css';
 
-// components/formulario/formulario.jsx
 const API_BASE_URL = "https://axenta-backend.onrender.com/api/servicios/";
-
 
 export default function Formulario() {
   const { nombreServicio } = useParams();
@@ -18,24 +17,20 @@ export default function Formulario() {
     apellidos: "",
     telefono: "",
     email: "",
-    servicio: nombreServicio || "", // Aseguramos que no sea undefined
+    servicio: nombreServicio || "",
   });
 
   const [alert, setAlert] = useState({
     show: false,
     message: "",
-    type: "", // 'success' o 'danger'
+    type: "",
   });
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: type === "checkbox"
-        ? checked
-        : name === "email"
-          ? value.toLowerCase()
-          : value,
+      [name]: type === "checkbox" ? checked : name === "email" ? value.toLowerCase() : value,
     });
   };
 
@@ -50,29 +45,15 @@ export default function Formulario() {
       });
 
       let data;
-      try {
-        data = await res.json();
-      } catch {
-        data = { detail: res.statusText };
-      }
+      try { data = await res.json(); } catch { data = { detail: res.statusText }; }
 
       if (!res.ok) {
-        console.error("Error backend:", data);
-        setAlert({
-          show: true,
-          message: t('registration_error'),
-          type: 'danger',
-        });
+        setAlert({ show: true, message: t('registration_error'), type: 'danger' });
         return;
       }
 
-      setAlert({
-        show: true,
-        message: t('registration_success'),
-        type: 'success',
-      });
+      setAlert({ show: true, message: t('registration_success'), type: 'success' });
 
-      // Limpiar formulario
       setFormData({
         nombre: "",
         apellidos: "",
@@ -82,23 +63,22 @@ export default function Formulario() {
       });
 
     } catch (error) {
-      console.error("Error conexión:", error);
-      setAlert({
-        show: true,
-        message: t('connection_error'),
-        type: 'danger',
-      });
+      setAlert({ show: true, message: t('connection_error'), type: 'danger' });
     }
   };
 
   useEffect(() => {
     if (alert.show) {
-      const timer = setTimeout(() => {
-        setAlert({ ...alert, show: false });
-      }, 4000);
+      const timer = setTimeout(() => setAlert({ ...alert, show: false }), 4000);
       return () => clearTimeout(timer);
     }
   }, [alert]);
+
+  // Variantes de animación
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+  };
 
   return (
     <div className="container my-5">
@@ -106,22 +86,32 @@ export default function Formulario() {
         <div className="col-md-6">
 
           {alert.show && (
-            <Card className={`mb-3 border-${alert.type} text-${alert.type}`}>
-              <Card.Body className="d-flex align-items-center">
-                {alert.type === 'success' ? (
-                  <FaCheckCircle className="me-2" />
-                ) : (
-                  <FaEnvelope className="me-2" />
-                )}
-                <span className="mensaje">{alert.message}</span>
-              </Card.Body>
-            </Card>
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Card className={`mb-3 border-${alert.type} text-${alert.type}`}>
+                <Card.Body className="d-flex align-items-center">
+                  {alert.type === 'success' ? <FaCheckCircle className="me-2" /> : <FaEnvelope className="me-2" />}
+                  <span className="mensaje">{alert.message}</span>
+                </Card.Body>
+              </Card>
+            </motion.div>
           )}
 
-          <form className="card shadow-lg p-4 formulario-card" onSubmit={handleSubmit}>
+          <motion.form
+            className="card shadow-lg p-4 formulario-card"
+            onSubmit={handleSubmit}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeInUp}
+          >
             <h2 className="text-center mb-4">{t('registration_form')}</h2>
 
-            <div className="input-group mb-3 animate-input">
+            <div className="input-group mb-3">
               <span className="input-group-text"><FaUser /></span>
               <input
                 type="text"
@@ -135,7 +125,7 @@ export default function Formulario() {
               />
             </div>
 
-            <div className="input-group mb-3 animate-input">
+            <div className="input-group mb-3">
               <span className="input-group-text"><FaUser /></span>
               <input
                 type="text"
@@ -149,7 +139,7 @@ export default function Formulario() {
               />
             </div>
 
-            <div className="input-group mb-3 animate-input">
+            <div className="input-group mb-3">
               <span className="input-group-text"><FaPhone /></span>
               <input
                 type="tel"
@@ -164,7 +154,7 @@ export default function Formulario() {
               />
             </div>
 
-            <div className="input-group mb-3 animate-input">
+            <div className="input-group mb-3">
               <span className="input-group-text"><FaEnvelope /></span>
               <input
                 type="email"
@@ -178,10 +168,15 @@ export default function Formulario() {
               />
             </div>
 
-            <button type="submit" className="btn btn-primary w-100 d-flex justify-content-center align-items-center boton-animado">
+            <motion.button
+              type="submit"
+              className="btn btn-primary w-100 d-flex justify-content-center align-items-center boton-animado"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <FaCheckCircle className="me-2" /> {t('sign_up')}
-            </button>
-          </form>
+            </motion.button>
+          </motion.form>
         </div>
       </div>
     </div>

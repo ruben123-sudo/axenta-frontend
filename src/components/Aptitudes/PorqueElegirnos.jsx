@@ -11,8 +11,7 @@ export default function PorQueElegirnos() {
   const beneficios = [
     'beneficio1',
     'beneficio2',
-    'beneficio3',
-    'beneficio4'
+    'beneficio3'
   ];
 
   return (
@@ -21,7 +20,7 @@ export default function PorQueElegirnos() {
         <h2 className="text-center mb-5 fw-bold">{t('porque_title')}</h2>
         <Row className="g-4 justify-content-center">
           {beneficios.map((item, index) => (
-            <Col md={6} lg={3} key={index}>
+            <Col md={4} lg={4} key={index}>
               <Card className="text-center shadow-sm border-0 h-100 p-3 bg-white">
                 <FaCheckCircle size={50} color="#0d6efd" className="mb-3" />
                 <Card.Body>

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Carousel, Button } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import i18n from '../../i18n';
+import { motion } from 'framer-motion';
 
 import fondoTrabajadores from '../assets/fondo-trabajadores.jpg';
 import fondoObra from '../assets/fondo-obra.jpg';
@@ -21,6 +21,12 @@ export default function HeroCarousel() {
     { img: fondoHosteleria, title: 'hero_slide5_title', subtitle: 'hero_slide5_subtitle' }
   ];
 
+  // Variantes de animación para contenido
+  const contentVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+  };
+
   return (
     <div>
       <Carousel fade interval={2600} controls={false} indicators={true}>
@@ -31,11 +37,29 @@ export default function HeroCarousel() {
               style={{ backgroundImage: `url(${slide.img})` }}
             >
               <div className="carousel-content text-center">
-                <h1>{t(slide.title)}</h1>
-                <p>{t(slide.subtitle)}</p>
-                <Button href="/servicios" variant="primary" size="lg">
-                  {t('contact_button')}
-                </Button>
+                <motion.h1
+                  initial="hidden"
+                  animate="visible"
+                  variants={contentVariants}
+                >
+                  {t(slide.title)}
+                </motion.h1>
+                <motion.p
+                  initial="hidden"
+                  animate="visible"
+                  variants={contentVariants}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                >
+                  {t(slide.subtitle)}
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1, transition: { duration: 0.8, delay: 0.6 } }}
+                >
+                  <Button href="/servicios" variant="primary" size="lg">
+                    {t('contact_button')}
+                  </Button>
+                </motion.div>
               </div>
             </div>
           </Carousel.Item>

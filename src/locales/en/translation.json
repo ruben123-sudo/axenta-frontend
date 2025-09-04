@@ -9,7 +9,7 @@
   "hero_slide4_subtitle": "Always on time with quality.",
   "hero_slide5_title": "Hospitality and quality services",
   "hero_slide5_subtitle": "Professional support in every sector.",
-  "contact_button": "Contact us",
+  "contact_button": "Request offer",
   "company_name": "Axenta Global Energy & Service S.L.",
   "nav_home": "Home",
   "nav_about": "About Us",
@@ -44,10 +44,9 @@
   "servicio4_title": "Hospitality & HoReCa",
   "servicio4_text": "Join a team that delivers professional services to restaurants, hotels, and catering with precision and care. If you take pride in the details.",
   "porque_title": "Why Choose Us?",
-  "beneficio1": "Guaranteed legality",
-  "beneficio2": "Speed and reliability",
-  "beneficio3": "Constant human support",
-  "beneficio4": "Quality and trust",
+  "beneficio1": "Seriousness and transparency",
+  "beneficio2": "Experience in the international labor sector",
+  "beneficio3": "Apoyo continuo a trabajadores y empresas",
   "contact_title": "Contact",
   "contact_success": "Message sent successfully!",
   "contact_error": "Error sending message. Please try again.",
@@ -78,6 +77,25 @@
     "Cleaning of commercial and industrial spaces.",
     "Cleaning of offices and private residences.",
     "Complementary services tailored to the client's needs."
+  ],
+  "company_infoo": [
+    { "label": "NIF", "value": "B22903462" },
+    { "label": "Phone", "value": "(+34) 643 373 883" },
+    { "label": "Email", "value": "axentaglobal.es@gmail.com" }
+  ],
+  "gallery": [
+    {
+      "title": "Who we are",
+      "text": "We are a company specialized in bringing workers to Spain from both the EU and non-EU countries, providing full assistance with visas, work permits, and support throughout the entire process."
+    },
+    {
+      "title": "Collaboration Steps",
+      "text": "1. Brief and requirements\n2. Contract and schedule\n3. Recruitment and documentation\n4. Arrival and integration into the position"
+    },
+    {
+      "title": "FAQ",
+      "text": "Q: How long does it take to receive personnel?\nA: Depending on the profile and documentation, 3–8 weeks for non-EU; 1–3 weeks for EU.\n\nQ: Do you also manage accommodation?\nA: We can coordinate options and logistics according to the project.\n\nQ: What guarantees do you offer?\nA: Contractual transparency clauses, replacement during trial period according to agreement."
+    }
   ]
 
 }

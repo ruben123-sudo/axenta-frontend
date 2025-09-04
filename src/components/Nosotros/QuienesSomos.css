@@ -23,4 +23,5 @@
 .descripcion {
  text-align: justify;
  hyphens: auto;
+ font-family: inherit;
 }

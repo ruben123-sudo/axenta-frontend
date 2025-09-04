@@ -32,7 +32,7 @@ export default function Header() {
             className="d-inline-block align-top me-2"
             alt="Axenta Logo"
           />
-          <span className="fw-bold small-text">
+          <span className="fw-bold fuente-nombre">
             {t('company_name')}
           </span>
         </Navbar.Brand>
