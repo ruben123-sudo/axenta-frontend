@@ -29,7 +29,7 @@ export default function HeroCarousel() {
 
   return (
     <div>
-      <Carousel fade interval={2600} controls={false} indicators={true}>
+      <Carousel className='scroll' fade interval={2600} controls={false} indicators={true}>
         {slides.map((slide, index) => (
           <Carousel.Item key={index}>
             <div

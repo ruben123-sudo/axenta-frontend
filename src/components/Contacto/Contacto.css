@@ -64,4 +64,7 @@
   .map-container iframe {
     height: 250px;
   }
+  .titulo{
+    margin-top: 7rem;
+  }
 }

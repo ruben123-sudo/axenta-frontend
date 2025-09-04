@@ -6,6 +6,9 @@
   align-items: center;
   justify-content: center;
 }
+.scroll{
+  overflow-x: hidden;
+}
 
 .carousel-content {
   color: white;

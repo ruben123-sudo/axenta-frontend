@@ -62,7 +62,7 @@ export default function Contacto() {
   return (
     <Container className="contacto-section">
       <motion.h2
-        className="text-center mb-5 fw-bold"
+        className="text-center titulo mb-5 fw-bold"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
