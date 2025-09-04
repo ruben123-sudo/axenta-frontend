@@ -1,6 +1,8 @@
 .quienes-somos {
   padding: 6rem 0; /* Espaciado vertical */
-  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden; /* Oculta el scroll horizontal */
 }
 
 .quienes-somos h2 {
