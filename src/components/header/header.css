@@ -97,6 +97,6 @@ body {
 
 /* Ajustar el ícono dentro */
 .navbar-toggler-icon {
-  width: 10px;  /* antes 24px aprox. */
-  height: 10px; /* antes 24px aprox. */
+  width: 15px;  /* antes 24px aprox. */
+  height: 15px; /* antes 24px aprox. */
 }

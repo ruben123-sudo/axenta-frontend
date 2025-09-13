@@ -14,10 +14,15 @@ i18n
       es: { translation: esTranslations },
       en: { translation: enTranslations },
     },
-    lng: savedLanguage,      // 👈 idioma inicial
-    fallbackLng: 'en',       // idioma de respaldo si no hay traducción
+    lng: savedLanguage,       // idioma inicial (solo lo que guardamos)
+    fallbackLng: 'en',        // idioma de respaldo
     interpolation: {
-      escapeValue: false,    // React ya protege contra XSS
+      escapeValue: false,
+    },
+    detection: {
+      order: ['localStorage'],           // solo mirar localStorage
+      lookupLocalStorage: 'appLanguage', // clave en localStorage
+      caches: ['localStorage'],
     },
   });
 

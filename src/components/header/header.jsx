@@ -17,11 +17,15 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Forzar siempre idioma correcto al montar o cambiar
+  useEffect(() => {
+    i18n.changeLanguage(language);
+  }, [language]);
+
   // Cambiar idioma
   const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
-    localStorage.setItem('appLanguage', lang);
     setLanguage(lang);
+    localStorage.setItem('appLanguage', lang);
   };
 
   return (
@@ -43,7 +47,7 @@ export default function Header() {
           <span className="fw-bold fuente-nombre">{t('company_name')}</span>
         </Navbar.Brand>
 
-        {/* Selector de idioma siempre visible */}
+        {/* Selector de idioma */}
         <div className="d-flex align-items-center idiomas me-3">
           <span
             className={`lang-btn ${language === 'es' ? 'active' : ''}`}
