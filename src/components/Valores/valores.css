@@ -19,3 +19,7 @@
 .valor-card:hover .valor-icon {
   transform: scale(1.2);
 }
+
+body {
+  overflow-x: hidden;
+}

@@ -15,3 +15,6 @@
 .footer a:hover {
   text-decoration: underline; /* Solo al pasar el ratón */
 }
+body {
+  overflow-x: hidden;
+}

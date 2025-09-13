@@ -5,6 +5,9 @@
   padding: 1rem 0;
   z-index: 9999;
 }
+body {
+  overflow-x: hidden;
+}
 
 .custom-navbar.shrink {
   padding: 0.4rem 0;
@@ -45,6 +48,39 @@
 
 @media (max-width:512px){
   .fuente-nombre {
-    font-size: 0.7rem; /* Tamaño de fuente más pequeño */
+    font-size: 0.6rem; /* Tamaño de fuente más pequeño */
+  }
+}
+
+.lang-btn {
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 2px solid #708bc7; /* borde naranja llamativo */
+  background-color: white;
+  color: #464fa1;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.lang-btn:hover {
+  background-color: #5a8ac2;
+  color: white;
+}
+
+.lang-btn.active {
+  background-color: #7688c0;
+  color: white;
+}
+
+
+.idiomas {
+  margin-left: 6rem;
+}
+
+@media (max-width: 768px) {
+  .idiomas {
+    margin-left: 0;
+    font-size: 0.5rem;
   }
 }

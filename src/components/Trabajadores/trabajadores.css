@@ -1,0 +1,56 @@
+/* trabajadores.css */
+
+.trabajadores-section {
+  margin-top: 7rem;
+}
+
+.trabajadores-section .titulo {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+}
+
+.trabajadores-section .form-control {
+  border-radius: 8px;
+  border: 1px solid #ced4da;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+.trabajadores-section .form-check-label {
+  font-size: 0.95rem;
+}
+
+.trabajadores-section .btn-primary {
+  background-color: #007bff;
+  border: none;
+  padding: 10px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.trabajadores-section .btn-primary:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.trabajadores-section .alert {
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.trabajadores-section textarea.form-control {
+  resize: none;
+}
+
+@media (max-width: 768px) {
+  .trabajadores-section {
+    padding: 40px 15px;
+  }
+  .trabajadores-section .titulo {
+    font-size: 2rem;
+  }
+}
+body {
+  overflow-x: hidden;
+}

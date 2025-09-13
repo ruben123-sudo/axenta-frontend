@@ -6,6 +6,7 @@ import Nosotros from '../Nosotros/QuienesSomos';
 import Servicios from '../Servicios/Servicios';
 import Contacto from '../Contacto/Contacto';
 import Footer from '../Footer/footer';
+import Introduccion from '../introduccion/introduccion';
 
 export default function Inicio() {
   // Variants para animaciones
@@ -33,6 +34,8 @@ export default function Inicio() {
     <div className="inicio-wrapper">
       {/* Background carousel */}
       <HeroCarousel />
+
+      <Introduccion />
 
       {/* Section animations */}
       <motion.div

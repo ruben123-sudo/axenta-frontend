@@ -68,3 +68,6 @@
     margin-top: 7rem;
   }
 }
+body {
+  overflow-x: hidden;
+}

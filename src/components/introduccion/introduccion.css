@@ -1,0 +1,49 @@
+.introduccion-section {
+  min-height: 80vh;
+  background: linear-gradient(160deg, #095a8a, #d3dce4);
+  color: white;
+  display: flex;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.introduccion-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+.introduccion-subtitle {
+  font-size: 1.2rem;
+}
+
+.btn-intro {
+  background-color: white;
+  color: #000000;
+  font-weight: bold;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn-intro:hover {
+  background-color: #f2f2f2;
+  color: #7598cc;
+}
+
+.btn-intro-alt {
+  border: 2px solid white;
+  color: white;
+  font-weight: bold;
+  padding: 12px 30px;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn-intro-alt:hover {
+  background-color: white;
+  color: #5883bb;
+}
+body {
+  overflow-x: hidden;
+}

@@ -1,0 +1,35 @@
+.whatsapp-container {
+  position: fixed;
+  top: 80%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.whatsapp-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25d366; /* verde WhatsApp */
+  transition: transform 0.2s;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive: más pequeño en móviles */
+@media (max-width: 576px) {
+  .whatsapp-btn {
+    width: 40px;
+    height: 40px;
+  }
+  .whatsapp-btn .fs-3 {
+    font-size: 1rem !important;
+  }
+}
+body {
+  overflow-x: hidden;
+}
