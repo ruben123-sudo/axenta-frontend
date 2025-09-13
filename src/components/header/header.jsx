@@ -23,10 +23,16 @@ export default function Header() {
   }, [language]);
 
   // Cambiar idioma
-  const changeLanguage = (lang) => {
-    setLanguage(lang);
+  // Cambiar idioma con control de errores en Safari
+const changeLanguage = (lang) => {
+  setLanguage(lang);
+  try {
     localStorage.setItem('appLanguage', lang);
-  };
+  } catch (e) {
+    console.warn("localStorage no disponible en este navegador (Safari privado).");
+  }
+};
+
 
   return (
     <Navbar
