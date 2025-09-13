@@ -84,3 +84,19 @@ body {
     font-size: 0.5rem;
   }
 }
+
+/* header.css */
+
+/* Reducir tamaño del botón hamburguesa */
+.navbar-toggler {
+  padding: 0.15rem 0.35rem; /* reduce espacio interno */
+  font-size: 0.8rem; /* reduce el tamaño del ícono */
+  line-height: 1;
+  border: none; /* opcional: quitar borde */
+}
+
+/* Ajustar el ícono dentro */
+.navbar-toggler-icon {
+  width: 10px;  /* antes 24px aprox. */
+  height: 10px; /* antes 24px aprox. */
+}
