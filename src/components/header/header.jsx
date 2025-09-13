@@ -54,7 +54,7 @@ const changeLanguage = (lang) => {
         </Navbar.Brand>
 
         {/* Selector de idioma */}
-        <div className="d-flex align-items-center idiomas me-3">
+        <div className="d-flex align-items-center idiomas me-1">
           <span
             className={`lang-btn ${language === 'es' ? 'active' : ''}`}
             onClick={() => changeLanguage('es')}
