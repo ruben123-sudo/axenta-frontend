@@ -7,10 +7,10 @@ import enTranslations from './locales/en/translation.json';
 // Función segura + normalizar idioma (es-ES → es, en-US → en)
 function getSavedLanguage() {
   try {
-    const lang = localStorage.getItem('appLanguage') || 'en';
-    return lang.split('-')[0]; 
+    const lang = localStorage.getItem('appLanguage') || 'es'; // 👈 español primero
+    return lang.split('-')[0];
   } catch (e) {
-    return 'en';
+    return 'es'; // 👈 fallback en español
   }
 }
 
@@ -23,8 +23,8 @@ i18n
       es: { translation: esTranslations },
       en: { translation: enTranslations },
     },
-    lng: savedLanguage,
-    fallbackLng: 'en',
+    lng: savedLanguage,   // idioma inicial → español si no hay nada guardado
+    fallbackLng: 'es',    // 👈 español como idioma de respaldo
     interpolation: {
       escapeValue: false,
     },
