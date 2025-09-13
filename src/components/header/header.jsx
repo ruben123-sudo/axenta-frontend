@@ -8,7 +8,7 @@ import './header.css';
 export default function Header() {
   const { t } = useTranslation();
   const [shrink, setShrink] = useState(false);
-  const [language, setLanguage] = useState(localStorage.getItem('appLanguage') || 'en');
+  const [language, setLanguage] = useState(i18n.language || 'en');
 
   // Detectar scroll
   useEffect(() => {
@@ -17,22 +17,16 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Forzar siempre idioma correcto al montar o cambiar
-  useEffect(() => {
-    i18n.changeLanguage(language);
-  }, [language]);
-
   // Cambiar idioma
-  // Cambiar idioma con control de errores en Safari
-const changeLanguage = (lang) => {
-  setLanguage(lang);
-  try {
-    localStorage.setItem('appLanguage', lang);
-  } catch (e) {
-    console.warn("localStorage no disponible en este navegador (Safari privado).");
-  }
-};
-
+  const changeLanguage = (lang) => {
+    i18n.changeLanguage(lang);
+    setLanguage(lang);
+    try {
+      localStorage.setItem('appLanguage', lang);
+    } catch (e) {
+      console.warn("localStorage no disponible en este navegador (Safari privado).");
+    }
+  };
 
   return (
     <Navbar

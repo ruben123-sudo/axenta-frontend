@@ -4,12 +4,13 @@ import { initReactI18next } from 'react-i18next';
 import esTranslations from './locales/es/translation.json';
 import enTranslations from './locales/en/translation.json';
 
-// Función segura para leer localStorage (Safari iOS puede bloquearlo)
+// Función segura + normalizar idioma (es-ES → es, en-US → en)
 function getSavedLanguage() {
   try {
-    return localStorage.getItem('appLanguage') || 'en';
+    const lang = localStorage.getItem('appLanguage') || 'en';
+    return lang.split('-')[0]; 
   } catch (e) {
-    return 'en'; // fallback si Safari bloquea localStorage
+    return 'en';
   }
 }
 
@@ -26,11 +27,6 @@ i18n
     fallbackLng: 'en',
     interpolation: {
       escapeValue: false,
-    },
-    detection: {
-      order: ['localStorage'],
-      lookupLocalStorage: 'appLanguage',
-      caches: ['localStorage'],
     },
   });
 
