@@ -184,6 +184,23 @@
   "payment_error_invalid_email": "Please enter a valid email",
   "payment_error_start_failed": "Payment could not be started. Please try again.",
   "terms_link_text": "Terms and Conditions",
-  "payment_secure_notice": "Secure payment with Stripe. Your data is protected."
+  "payment_secure_notice": "Secure payment with Stripe. Your data is protected.",
+  "energy": {
+    "title": "Solar Power – Your Future",
+    "description": "We provide complete green energy solutions: solar panels, storage batteries and intelligent systems.",
+    "items": [
+      "High-efficiency solar panels",
+      "Energy storage batteries (BESS) for homes, businesses, and industry",
+      "Complete green energy systems (on-grid & off-grid)",
+      "Professional consultancy, design & installation",
+      "24/7 maintenance & monitoring"
+    ],
+    "images": {
+      "solar": "Solar Panels",
+      "bess": "BESS Batteries",
+      "green": "Green Energy"
+    },
+    "cta": "Request a Quote"
+  }
 
 }

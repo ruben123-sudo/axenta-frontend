@@ -14,6 +14,7 @@ import TermsWorkers from './components/terminos/terminosTrabajadores/terminos';
 import TermsEmployers from './components/terminos/terminosEmpresa/terminos';
 import PaymentCompany from './components/pagos/pagoEmpresa/pagos';
 import PaymentWorker from './components/pagos/pagoTrabajadores/pagos';
+import Energy from './components/energia/energia';
 import ProtectedRoute from './ProtectedRoute'; // <-- importamos el componente
 
 function App() {
@@ -54,6 +55,7 @@ function App() {
         <Route path="/thanks" element={<Thanks />} />
         <Route path="/terms-workers" element={<TermsWorkers />} />
         <Route path="/terms-employers" element={<TermsEmployers />} />
+        <Route path="/energia" element={<Energy />} />
 
         {/* 🔹 Rutas de pagos */}
         <Route path="/pago/empresa" element={<PaymentCompany />} />

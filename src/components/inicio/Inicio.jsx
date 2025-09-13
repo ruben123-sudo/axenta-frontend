@@ -7,6 +7,7 @@ import Servicios from '../Servicios/Servicios';
 import Contacto from '../Contacto/Contacto';
 import Footer from '../Footer/footer';
 import Introduccion from '../introduccion/introduccion';
+import Energy from '../energia/energia'; // ✅ Importamos el componente de energía
 
 export default function Inicio() {
   // Variants para animaciones
@@ -47,6 +48,16 @@ export default function Inicio() {
         <Nosotros />
       </motion.div>
 
+      {/* ✅ Nueva sección Energy con animación */}
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
+        <Energy />
+      </motion.div>
+
       <motion.div
         initial="hidden"
         whileInView="visible"
@@ -55,6 +66,8 @@ export default function Inicio() {
       >
         <Servicios />
       </motion.div>
+
+      
 
       <motion.div
         initial="hidden"

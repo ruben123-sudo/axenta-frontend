@@ -185,7 +185,24 @@
   "payment_email_placeholder": "Introduce tu correo electrónico",
   "payment_error_invalid_email": "Por favor introduce un correo válido",
   "payment_error_start_failed": "No se pudo iniciar el pago. Intenta de nuevo.",
-  "payment_secure_notice": "Pago seguro con Stripe. Tus datos están protegidos."
+  "payment_secure_notice": "Pago seguro con Stripe. Tus datos están protegidos.",
+   "energy": {
+    "title": "Energía Solar – Tu Futuro",
+    "description": "Ofrecemos soluciones completas de energía verde: paneles solares, baterías de almacenamiento e inteligencia energética.",
+    "items": [
+      "Paneles solares de alta eficiencia",
+      "Baterías de almacenamiento (BESS) para hogares, empresas e industria",
+      "Sistemas completos de energía verde (conectados y autónomos)",
+      "Consultoría, diseño e instalación profesional",
+      "Mantenimiento y monitorización 24/7"
+    ],
+    "images": {
+      "solar": "Paneles Solares",
+      "bess": "Baterías BESS",
+      "green": "Energía Verde"
+    },
+    "cta": "Solicita Presupuesto"
+  }
 
 
 }
