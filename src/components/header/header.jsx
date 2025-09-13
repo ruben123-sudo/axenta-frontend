@@ -7,8 +7,18 @@ import './header.css';
 
 export default function Header() {
   const { t } = useTranslation();
+
+  // Leer idioma inicial de localStorage (normalizado)
+  const initialLanguage = (() => {
+    try {
+      return (localStorage.getItem('appLanguage') || 'es').split('-')[0];
+    } catch (e) {
+      return 'es';
+    }
+  })();
+
   const [shrink, setShrink] = useState(false);
-  const [language, setLanguage] = useState(i18n.language || 'en');
+  const [language, setLanguage] = useState(initialLanguage);
 
   // Detectar scroll
   useEffect(() => {
@@ -19,8 +29,8 @@ export default function Header() {
 
   // Cambiar idioma
   const changeLanguage = (lang) => {
-    i18n.changeLanguage(lang);
     setLanguage(lang);
+    i18n.changeLanguage(lang);
     try {
       localStorage.setItem('appLanguage', lang);
     } catch (e) {

@@ -4,13 +4,13 @@ import { initReactI18next } from 'react-i18next';
 import esTranslations from './locales/es/translation.json';
 import enTranslations from './locales/en/translation.json';
 
-// Función segura + normalizar idioma (es-ES → es, en-US → en)
+// Función segura para leer y normalizar idioma
 function getSavedLanguage() {
   try {
-    const lang = localStorage.getItem('appLanguage') || 'es'; // 👈 español primero
-    return lang.split('-')[0];
+    const lang = localStorage.getItem('appLanguage') || 'es'; // español por defecto
+    return lang.split('-')[0]; // "es-ES" -> "es"
   } catch (e) {
-    return 'es'; // 👈 fallback en español
+    return 'es'; // fallback si Safari bloquea localStorage
   }
 }
 
@@ -23,8 +23,8 @@ i18n
       es: { translation: esTranslations },
       en: { translation: enTranslations },
     },
-    lng: savedLanguage,   // idioma inicial → español si no hay nada guardado
-    fallbackLng: 'es',    // 👈 español como idioma de respaldo
+    lng: savedLanguage,   // idioma inicial
+    fallbackLng: 'en',    // si falta traducción en español, usar inglés
     interpolation: {
       escapeValue: false,
     },
