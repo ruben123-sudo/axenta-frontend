@@ -202,7 +202,20 @@
       "green": "Energía Verde"
     },
     "cta": "Solicita Presupuesto"
-  }
+  },
+  "company_payment_accept_terms": "He leído y acepto todos los términos",
+  "company_payment_start": "Continuar",
+  "worker_payment_accept_terms": "He leído y acepto todos los términos",
+  "refund_policy_title": "Política de reembolso / Refund Policy",
+  "refund_policy_intro": "En nuestra empresa valoramos la transparencia y la satisfacción de nuestros clientes. Por lo tanto, hemos diseñado una política de reembolso clara y justa:",
+  "refund_policy_point_1": "Todos los pagos realizados son procesados de manera segura a través de Stripe u otros proveedores de pago autorizados.",
+  "refund_policy_point_2": "Podrás solicitar un reembolso completo dentro de los 14 días posteriores a la compra, siempre y cuando el servicio no haya sido utilizado o activado.",
+  "refund_policy_point_3": "Una vez que el servicio haya sido activado o utilizado, no se admitirán reembolsos, excepto en casos de error técnico atribuible a nosotros.",
+  "refund_policy_point_4": "Para solicitar un reembolso, deberás contactarnos al correo soporte@ejemplo.com indicando los detalles de tu compra.",
+  "refund_policy_point_5": "Nos reservamos el derecho de rechazar solicitudes de reembolso que no cumplan con estas condiciones.",
+  "refund_policy_conclusion": "Esta política busca garantizar un equilibrio justo entre la protección del consumidor y el compromiso de la empresa con la calidad del servicio.",
+  "reembolso": "El pago de la tasa de 50 € representa únicamente la tasa de aplicación y NO incluye todos los costos para la obtención del contrato de trabajo y el traslado a España. Otros gastos y costos adicionales (visa, transporte, documentos) serán comunicados y negociados posteriormente, según la situación de cada candidato. La tasa de aplicación NO es reembolsable."
+
 
 
 }

@@ -16,11 +16,16 @@ export default function PaymentWorker({ onPaymentSuccess }) {
   const [clientSecret, setClientSecret] = useState(null);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   // Crear PaymentIntent en el backend
   const handleStartPayment = async () => {
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
       setError(t("payment_error_invalid_email"));
+      return;
+    }
+    if (!acceptedTerms) {
+      setError(t("payment_error_terms_required"));
       return;
     }
 
@@ -31,7 +36,7 @@ export default function PaymentWorker({ onPaymentSuccess }) {
           form_type: "worker",
           form_id: 1,
           email,
-          amount: 50, // Ajusta el importe según tu servicio
+          amount: 50 // Ajusta el importe según tu servicio
         }
       );
       setClientSecret(res.data.clientSecret);
@@ -44,6 +49,7 @@ export default function PaymentWorker({ onPaymentSuccess }) {
 
   return (
     <div className="payment-container secure prueba">
+      {/* Título */}
       <h3>{t("worker_payment_title")}</h3>
 
       <div className="payment-form">
@@ -58,9 +64,38 @@ export default function PaymentWorker({ onPaymentSuccess }) {
         />
         {error && <p className="text-danger">{error}</p>}
 
-        {/* Botón único de pago */}
+        {/* Checkbox de aceptación de términos (solo si no ha comenzado el pago) */}
         {!clientSecret && (
-          <button onClick={handleStartPayment} className="btn btn-success mb-3">
+          <div className="form-check mb-3">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id="acceptTermsWorker"
+              checked={acceptedTerms}
+              onChange={(e) => setAcceptedTerms(e.target.checked)}
+            />
+            <label className="form-check-label" htmlFor="acceptTermsWorker">
+              {t("worker_payment_accept_terms")}{" "}
+              <a
+                href="/terms-workers"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("terms_link_text")}
+              </a>
+            </label>
+          </div>
+        )}
+
+        {/* Botón único: activa suscripción */}
+        {!clientSecret && (
+          <button
+            onClick={handleStartPayment}
+            className="btn btn-success mb-3"
+            disabled={
+              !email || !/\S+@\S+\.\S+/.test(email) || !acceptedTerms
+            }
+          >
             {t("worker_payment_button")}
           </button>
         )}
@@ -70,23 +105,16 @@ export default function PaymentWorker({ onPaymentSuccess }) {
           <Elements stripe={stripePromise} options={{ clientSecret }}>
             <CheckoutForm
               clientSecret={clientSecret}
-              onSuccess={onPaymentSuccess} // solo se llama cuando el pago se confirma
+              onSuccess={onPaymentSuccess}
               email={email}
             />
           </Elements>
         )}
       </div>
 
-      {/* Términos */}
-      <p className="small-text">
-        {t("worker_payment_text")}{" "}
-        <a href="/terms-workers" target="_blank" rel="noopener noreferrer">
-          {t("terms_link_text")}
-        </a>
-      </p>
-
-      <div className="secure-footer">
-        <p>{t("payment_secure_notice")}</p>
+      {/* Aviso de seguridad */}
+      <div className="secure-footer texto">
+        <p>{t("payment_secure_notice")}</p><p>{t("reembolso")}</p>
       </div>
     </div>
   );

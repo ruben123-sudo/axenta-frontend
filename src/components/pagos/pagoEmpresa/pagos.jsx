@@ -16,11 +16,16 @@ export default function PaymentCompany({ onPaymentSuccess }) {
   const [clientSecret, setClientSecret] = useState(null);
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
 
   // Crear PaymentIntent en el backend
   const handleStartPayment = async () => {
     if (!email || !/\S+@\S+\.\S+/.test(email)) {
       setError(t("payment_error_invalid_email"));
+      return;
+    }
+    if (!acceptedTerms) {
+      setError(t("payment_error_terms_required"));
       return;
     }
 
@@ -31,7 +36,7 @@ export default function PaymentCompany({ onPaymentSuccess }) {
           form_type: "company",
           form_id: 1,
           email,
-          amount: 200, // Ajusta el importe según tu servicio
+          amount: 200 // Ajusta el importe según tu servicio
         }
       );
       setClientSecret(res.data.clientSecret);
@@ -43,12 +48,12 @@ export default function PaymentCompany({ onPaymentSuccess }) {
   };
 
   return (
-    <div className="payment-container secure">
+    <div className="payment-container secure prueba">
       <h3>{t("company_payment_title")}</h3>
 
       <div className="payment-form">
         {/* Input de correo */}
-        <h2>{t("payment_enter_email")}</h2>
+        <h6>{t("payment_enter_email")}</h6>
         <input
           type="email"
           placeholder={t("payment_email_placeholder")}
@@ -58,9 +63,38 @@ export default function PaymentCompany({ onPaymentSuccess }) {
         />
         {error && <p className="text-danger">{error}</p>}
 
-        {/* Botón único de pago */}
+        {/* Checkbox de aceptación de términos (solo si no ha comenzado el pago) */}
         {!clientSecret && (
-          <button onClick={handleStartPayment} className="btn btn-success mb-3">
+          <div className="form-check mb-3">
+            <input
+              type="checkbox"
+              className="form-check-input"
+              id="acceptTerms"
+              checked={acceptedTerms}
+              onChange={(e) => setAcceptedTerms(e.target.checked)}
+            />
+            <label className="form-check-label" htmlFor="acceptTerms">
+              {t("company_payment_accept_terms")}{" "}
+              <a
+                href="/terms-employers"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("terms_link_text")}
+              </a>
+            </label>
+          </div>
+        )}
+
+        {/* Botón único: activa suscripción */}
+        {!clientSecret && (
+          <button
+            onClick={handleStartPayment}
+            className="btn btn-success mb-3"
+            disabled={
+              !email || !/\S+@\S+\.\S+/.test(email) || !acceptedTerms
+            }
+          >
             {t("company_payment_button")}
           </button>
         )}
@@ -77,14 +111,7 @@ export default function PaymentCompany({ onPaymentSuccess }) {
         )}
       </div>
 
-      {/* Términos */}
-      <p className="small-text">
-        {t("company_payment_text")}{" "}
-        <a href="/terms-employers" target="_blank" rel="noopener noreferrer">
-          {t("terms_link_text")}
-        </a>
-      </p>
-
+      {/* Aviso de seguridad */}
       <div className="secure-footer">
         <p>{t("payment_secure_notice")}</p>
       </div>

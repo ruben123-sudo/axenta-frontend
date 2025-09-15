@@ -201,6 +201,19 @@
       "green": "Green Energy"
     },
     "cta": "Request a Quote"
-  }
-
+  },
+  "company_payment_accept_terms": "I have read and agree to all the terms",
+  "company_payment_start": "Continue",
+  "worker_payment_accept_terms": "I have read and accept all terms",
+  "refund_policy_title": "Refund Policy / Política de reembolso",
+  "refund_policy_intro": "At our company, we value transparency and customer satisfaction. Therefore, we have designed a clear and fair refund policy:",
+  "refund_policy_point_1": "All payments are securely processed through Stripe or other authorized payment providers.",
+  "refund_policy_point_2": "You may request a full refund within 14 days of purchase, provided the service has not been used or activated.",
+  "refund_policy_point_3": "Once the service has been activated or used, refunds will not be granted, except in cases of technical errors attributable to us.",
+  "refund_policy_point_4": "To request a refund, please contact us at soporte@ejemplo.com providing your purchase details.",
+  "refund_policy_point_5": "We reserve the right to deny refund requests that do not meet these conditions.",
+  "refund_policy_conclusion": "This policy aims to ensure a fair balance between consumer protection and the company's commitment to service quality.",
+  "reembolso": "The payment of the €50 fee represents only the application fee and DOES NOT include all costs for obtaining the work contract and relocating to Spain. Other expenses and additional costs (visa, transportation, documents) will be communicated and negotiated later, depending on each candidate's situation. The application fee is NON-refundable.."
+  
+ 
 }

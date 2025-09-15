@@ -15,6 +15,7 @@ import TermsEmployers from './components/terminos/terminosEmpresa/terminos';
 import PaymentCompany from './components/pagos/pagoEmpresa/pagos';
 import PaymentWorker from './components/pagos/pagoTrabajadores/pagos';
 import Energy from './components/energia/energia';
+import PoliticasReembolso from './components/terminos/reembolso/polticas';
 import ProtectedRoute from './ProtectedRoute'; // <-- importamos el componente
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
 
         {/* Inscripción libre (gratuita) */}
         <Route path="/inscripcion/:nombreServicio" element={<Formulario />} />
+        <Route path="/politicas-reembolso" element={<PoliticasReembolso />} />
 
         {/* Formularios de empresa y trabajador protegidos */}
         <Route

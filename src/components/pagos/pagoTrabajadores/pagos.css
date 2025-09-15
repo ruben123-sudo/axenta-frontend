@@ -1,3 +1,9 @@
 .prueba{
     margin-top: 10rem;
 }
+.texto{
+    text-align: justify;
+    overflow: hidden;
+    hyphens: auto;
+    margin: 0 1rem;
+}

@@ -38,6 +38,18 @@ export default function TermsEmployers() {
 
       <h4>{t("terms_employers_7_title")}</h4>
       <p>{t("terms_employers_7_text")}</p>
+
+      {/* 🔹 Nueva sección: Política de reembolso / Refund Policy */}
+      <h4>{t("refund_policy_title")}</h4>
+      <p>{t("refund_policy_intro")}</p>
+      <ul>
+        <li>{t("refund_policy_point_1")}</li>
+        <li>{t("refund_policy_point_2")}</li>
+        <li>{t("refund_policy_point_3")}</li>
+        <li>{t("refund_policy_point_4")}</li>
+        <li>{t("refund_policy_point_5")}</li>
+      </ul>
+      <p>{t("refund_policy_conclusion")}</p>
     </div>
   );
 }
